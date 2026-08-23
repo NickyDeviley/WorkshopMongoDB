@@ -3,6 +3,16 @@ package com.nelioalves.workshopmongo.domain;
 import java.io.Serializable;
 import java.util.Objects;
 
+import org.springframework.data.annotation.Id;
+import org.springframework.data.mongodb.core.mapping.Document;
+
+/*
+	Para esclarecer que essa classe representa um objeto que será
+	tratado no banco mongoDB, nós utilizamos a anotação "Document",
+	nós também podemos especificar a coleção, isso é, o nome que
+	esses objetos terão no banco de dados.
+*/
+@Document(collection = "user")
 public class User implements Serializable {
 	/**
 		Criar uma entidade checklist:
@@ -18,6 +28,8 @@ public class User implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	// Atributes
+
+	@Id
 	private String id;
 	private String name;
 	private String email;
