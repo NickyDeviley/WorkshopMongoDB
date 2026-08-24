@@ -1,11 +1,13 @@
 package com.nelioalves.workshopmongo.services;
 
 import java.util.List;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.nelioalves.workshopmongo.domain.User;
+import com.nelioalves.workshopmongo.services.exception.ObjectNotFoundException;
 import com.nelioalves.workshopmongo.tepository.UserRepository;
 
 @Service
@@ -21,10 +23,22 @@ public class UserService {
 	@Autowired
 	private UserRepository repo;
 	
-	public List<User> findAll() {
+	public List<User> findAll () {
 		
 		return this.repo.findAll();	// Método que recupera todos os objetos e retorna
 		
 	}
 	
+	public User findById (String id) {
+		/*
+			O instrutor utilizou o método "findOne(String)" que não existe mais,
+			então esse método está adaptado para o Spring atual.
+		*/
+		Optional<User> user = this.repo.findById(id);
+//		if (user == null) {
+//			throw new ObjectNotFoundException("Objeto não encontrado");
+//		}
+
+		return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+	}
 }

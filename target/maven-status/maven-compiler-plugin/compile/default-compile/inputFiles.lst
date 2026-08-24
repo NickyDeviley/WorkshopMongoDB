@@ -1,0 +1,10 @@
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/WorkshopmongoApplication.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/config/Instantiation.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/domain/User.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/dto/UserDTO.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/resources/UserResource.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/resources/exception/ResourceExceptionHandler.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/resources/exception/StandardError.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/services/UserService.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/services/exception/ObjectNotFoundException.java
+/home/nicholas/WorkSpaces/EclipseSpringTools_WS/workshopmongo/src/main/java/com/nelioalves/workshopmongo/tepository/UserRepository.java
