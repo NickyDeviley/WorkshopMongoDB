@@ -43,15 +43,29 @@ public class UserService {
 		return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
 	}
 	
-	public User insert(User obj) {
+	public User insert (User obj) {
 		return repo.insert(obj);
 	}
 
-	public void delete(String id) {
+	public void delete (String id) {
 		findById(id);
 		this.repo.deleteById(id);
 	}
 	
+	public User update (User obj) {
+		Optional<User> newObj1 = repo.findById(obj.getId());
+		User newObj = newObj1.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+		updateData(newObj, obj);
+		return repo.save(newObj);
+	}
+	
+	private void updateData(User newObj, User obj) {
+		
+		newObj.setName(obj.getName());
+		newObj.setEmail(obj.getEmail());
+		
+	}
+
 	public User fromDTO (UserDTO objDto) {
 		return new User(objDto.getId(), objDto.getName(), objDto.getEmail());
 	}
