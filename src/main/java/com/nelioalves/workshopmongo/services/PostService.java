@@ -1,11 +1,11 @@
 package com.nelioalves.workshopmongo.services;
 
+import java.util.List;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.nelioalves.workshopmongo.domain.Post;
-import com.nelioalves.workshopmongo.domain.User;
 import com.nelioalves.workshopmongo.services.exception.ObjectNotFoundException;
 import com.nelioalves.workshopmongo.tepository.PostRepository;
 
@@ -25,6 +25,12 @@ public class PostService {
 //		}
 
 		return user.orElseThrow(() -> new ObjectNotFoundException("Objeto não encontrado"));
+	}
+	
+	public List<Post> findByTitle (String text) {
+		
+		return repo.findByTitleContaining(text);
+		
 	}
 	
 }

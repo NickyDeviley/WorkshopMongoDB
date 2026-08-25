@@ -1,5 +1,7 @@
 package com.nelioalves.workshopmongo.tepository;
 
+import java.util.List;
+
 import org.springframework.data.mongodb.repository.MongoRepository;
 import org.springframework.stereotype.Repository;
 
@@ -23,5 +25,7 @@ public interface PostRepository extends MongoRepository<Post, String> {
 		sem a necessidade de que tenhamos que escrever os comandos
 		exatos.
 	*/
+	
+	List<Post> findByTitleContainingIgnoreCase (String text);
 	
 }
